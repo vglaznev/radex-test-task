@@ -102,9 +102,13 @@ int main() {
     printCircles(circles);
 
     //6. Compute the total sum of radii of all curves in the second container.
-    double sumOfRadii = std::accumulate(circles.begin(), circles.end(), 0.0, [](double sum, const auto circle) {
-        return sum + circle->getRadius();
-    });
+    //8. Implement computation of the total sum of radii using parallel computations
+    double sumOfRadii = 0.0;
+
+#pragma omp parallel for reduction(+:sum)
+    for (int i = 0; i < circles.size(); i++) {
+        sumOfRadii += circles.at(i)->getRadius();
+    }
 
     fmt::println("\nSum of radii in second container: {:.3f}", sumOfRadii);
 
