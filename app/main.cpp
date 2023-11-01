@@ -76,8 +76,8 @@ int main() {
     fmt::println("   |{: ^23}|{: ^23}", "Point", "Derivative");
     double parameter = M_PI / 4;
     for (int i = 0; i < curves.size(); i++) {
-        fmt::println("{0:2} | {1} | {2} |", i, curves.at(i)->value(parameter),
-                     curves.at(i)->derivativeValue(parameter));
+        fmt::println("{0:2} | {1} | {2} |", i, curves.at(i)->getPointAt(parameter),
+                     curves.at(i)->getDerivativeAt(parameter));
     }
     //4. Populate a second container that would contain only circles from the first container. Make sure the
     //second container shares (i.e. not clones) circles of the first one, e.g. via pointers.

@@ -14,9 +14,9 @@ namespace curves {
 
         void setRadius(double radius);
 
-        Point value(double t) const override;
+        Point getPointAt(double t) const override;
 
-        Point derivativeValue(double t) const override;
+        Point getDerivativeAt(double t) const override;
 
     private:
         double radius;

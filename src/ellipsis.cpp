@@ -11,7 +11,7 @@ namespace curves {
         }
     }
 
-    Point Ellipses::value(double t) const {
+    Point Ellipses::getPointAt(double t) const {
         double x = xRadius * std::cos(t);
         double y = yRadius * std::sin(t);
         return {.x = x, .y = y, .z = 0};
@@ -33,7 +33,7 @@ namespace curves {
         this->yRadius = yRadius;
     }
 
-    Point Ellipses::derivativeValue(double t) const {
+    Point Ellipses::getDerivativeAt(double t) const {
         double xDer = -xRadius * std::sin(t);
         double yDer = yRadius * std::cos(t);
         return {.x = xDer, .y = yDer, .z = 0};

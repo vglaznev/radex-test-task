@@ -11,14 +11,14 @@ namespace curves {
 
     class ParametricFunction {
     public:
-        virtual Point value(double t) const = 0;
+        virtual Point getPointAt(double t) const = 0;
 
         virtual ~ParametricFunction() = default;
     };
 
     class DifferentiableParametricFunction : public ParametricFunction {
     public:
-        virtual Point derivativeValue(double t) const = 0;
+        virtual Point getDerivativeAt(double t) const = 0;
     };
 
 }

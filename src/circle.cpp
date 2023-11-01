@@ -10,7 +10,7 @@ namespace curves {
         }
     }
 
-    Point Circle::value(double t) const {
+    Point Circle::getPointAt(double t) const {
         double x = radius * std::cos(t);
         double y = radius * std::sin(t);
         return {.x = x, .y = y, .z = 0};
@@ -24,7 +24,7 @@ namespace curves {
         this->radius = radius;
     }
 
-    Point Circle::derivativeValue(double t) const {
+    Point Circle::getDerivativeAt(double t) const {
         double x = -radius * std::sin(t);
         double y = radius * std::cos(t);
         return {.x = x, .y = y, .z = 0};

@@ -11,7 +11,7 @@ namespace curves {
         }
     }
 
-    Point Helix::value(double t) const {
+    Point Helix::getPointAt(double t) const {
         double x = radius * std::cos(t);
         double y = radius * std::sin(t);
         double z = step * t;
@@ -34,7 +34,7 @@ namespace curves {
         this->step = step;
     }
 
-    Point Helix::derivativeValue(double t) const {
+    Point Helix::getDerivativeAt(double t) const {
         double xDer = -radius * std::sin(t);
         double yDer = radius * std::cos(t);
         double zDer = step;
